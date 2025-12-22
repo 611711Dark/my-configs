@@ -12,10 +12,10 @@ return {
     freetype_load_target = "Light",
     freetype_render_target = "HorizontalLcd",
 
-    -- 颜色主题（保持原版优化）Eldritch;Dark Violet (base16)"
-    color_scheme = "Eldritch",
+    -- 颜色主题（保持原版优化)Dark Pastel;Tokyo Night;Eldritch;Dark Violet (base16)"
+    color_scheme = "Dark Pastel",
     colors = {
-        cursor_bg = "#528bff", -- 保留光标颜色优化
+        background  = "2e3440", -- 保留光标颜色优化
     },
 
     -- 窗口设置（保持原版优化）
@@ -32,6 +32,12 @@ return {
 
     -- 完全保留原始按键配置
     keys = {
+        -- 1. 切换单个窗格最大化 (新添加)
+        { key = "Enter", mods = "SHIFT|CTRL", action = wezterm.action.TogglePaneZoomState },
+        
+        -- 窗口全屏切换
+        { key = "Enter", mods = "ALT", action = wezterm.action.ToggleFullScreen },
+        
         -- 标签操作
         { key = "t", mods = "CTRL", action = wezterm.action({ SpawnTab = "CurrentPaneDomain" }) },
         { key = "w", mods = "CTRL", action = wezterm.action({ CloseCurrentTab = { confirm = true } }) },

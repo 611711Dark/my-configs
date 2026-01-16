@@ -33,10 +33,10 @@ return {
     -- 完全保留原始按键配置
     keys = {
         -- 1. 切换单个窗格最大化 (新添加)
-        { key = "Enter", mods = "SHIFT|CTRL", action = wezterm.action.TogglePaneZoomState },
+        { key = "Enter", mods = "ALT", action = wezterm.action.TogglePaneZoomState },
         
         -- 窗口全屏切换
-        { key = "Enter", mods = "ALT", action = wezterm.action.ToggleFullScreen },
+        { key = "Enter", mods = "SHIFT|CTRL", action = wezterm.action.ToggleFullScreen },
         
         -- 标签操作
         { key = "t", mods = "CTRL", action = wezterm.action({ SpawnTab = "CurrentPaneDomain" }) },

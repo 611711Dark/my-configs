@@ -1,0 +1,86 @@
+#❯ cat .config/alacritty/alacritty.toml
+# ==========================================
+# 窗口设置
+# ==========================================
+[window]
+dimensions = { columns = 80, lines = 24 }
+padding = { x = 10, y = 10 }
+dynamic_padding = true
+decorations = "Full"             # macOS 可设为 "Transparent" 以获得更现代的外观
+opacity = 0.85                   # 匹配 Wezterm 的 0.85
+blur = true                      # 开启背景模糊 (macOS/KDE 支持)
+
+# ==========================================
+# 字体设置
+# ==========================================
+[font]
+size = 14.0
+
+[font.normal]
+family = "JetBrains Mono"        # 确保系统已安装该字体
+style = "Regular"
+
+[font.bold]
+family = "JetBrains Mono"
+style = "Bold"
+
+[font.italic]
+family = "JetBrains Mono"
+style = "Italic"
+
+# ==========================================
+# 鲜艳版颜色主题 (Catppuccin Mocha)
+# ==========================================
+[colors.primary]
+background = "#1e1e2e"           # 更深邃的深紫色背景
+foreground = "#cdd6f4"           # 明亮的浅灰色文字
+
+[colors.normal]
+black   = "#45475a"
+red     = "#f38ba8"           # 鲜艳红
+green   = "#a6e3a1"           # 鲜艳绿
+yellow  = "#f9e2af"           # 鲜艳黄
+blue    = "#89b4fa"           # 鲜艳蓝
+magenta = "#f5c2e7"           # 鲜艳粉
+cyan    = "#94e2d5"           # 鲜艳青
+white   = "#bac2de"
+
+[colors.bright]
+black   = "#585b70"
+red     = "#f38ba8"
+green   = "#a6e3a1"
+yellow  = "#f9e2af"
+blue    = "#89b4fa"
+magenta = "#f5c2e7"
+cyan    = "#94e2d5"
+white   = "#a6adc8"
+
+[colors.cursor]
+text = "#1e1e2e"
+cursor = "#f5e0dc"               # 浅粉色光标
+# ==========================================
+# 光标设置
+# ==========================================
+[cursor]
+style = { shape = "Beam", blinking = "On" }
+blink_interval = 500
+
+# ==========================================
+# 终端协议与兼容性
+# ==========================================
+[env]
+TERM = "xterm-256color"
+
+[selection]
+save_to_clipboard = false         # 选中即复制 (匹配现代习惯)
+
+# ==========================================
+# 快捷键 (Keyboard Bindings)
+# ==========================================
+# 注意：Alacritty 默认会将大部分组合键发送给 tmux。
+# 如果发现 Ctrl+Shift+H 等无法在 tmux 生效，通常无需额外配置，
+# 但如果需要强制发送特殊转义字符，可在此添加。
+[[keyboard.bindings]]
+key = "Return"
+mods = "Control|Shift"
+action = "ToggleFullscreen"     # 匹配你之前的全屏快捷键
